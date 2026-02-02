@@ -28,7 +28,7 @@ export default function Testimonials() {
         <div className="text-center mb-12">
           <h2 className="mb-4">What Families Say</h2>
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Real feedback from parents who've seen their children thrive
+            Real feedback from parents who&apos;ve seen their children thrive
           </p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
