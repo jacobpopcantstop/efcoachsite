@@ -16,15 +16,16 @@ export default function CTA({
   variant = "dark",
 }: CTAProps) {
   const bgClass = variant === "dark"
-    ? "bg-gradient-to-br from-gray-900 to-gray-800"
-    : "bg-gradient-to-br from-primary to-primary-dark";
+    ? "bg-gradient-to-br from-gray-900 to-gray-800 dark:from-gray-950 dark:to-gray-900"
+    : "bg-gradient-to-br from-primary to-primary-dark dark:from-blue-900 dark:to-blue-950";
 
   return (
-    <section className={`py-24 ${bgClass} text-white text-center`}>
-      <div className="container">
-        <h2 className="text-white mb-4">{title}</h2>
-        <p className="text-gray-300 text-lg max-w-xl mx-auto mb-8">{description}</p>
-        <Link href={buttonHref} className="btn btn-primary text-lg px-8 py-4">
+    <section className={`py-24 ${bgClass} text-white text-center relative overflow-hidden transition-colors`}>
+      <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+      <div className="container relative z-10">
+        <h2 className="text-white mb-6 animate-fade-in">{title}</h2>
+        <p className="text-gray-300 dark:text-gray-400 text-xl max-w-2xl mx-auto mb-10 leading-relaxed animate-slide-up">{description}</p>
+        <Link href={buttonHref} className="btn btn-primary text-lg px-10 py-5 shadow-2xl hover:shadow-3xl transform hover:scale-110 transition-all animate-slide-up-delay">
           {buttonText}
         </Link>
       </div>

@@ -32,37 +32,42 @@ const services = [
 
 export default function ServicesPreview() {
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-white dark:bg-gray-900 transition-colors">
       <div className="container">
-        <h2 className="text-center mb-12">How to Work Together</h2>
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="text-center mb-12">
+          <h2 className="mb-4">How to Work Together</h2>
+          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            Choose the option that fits your needs and budget
+          </p>
+        </div>
+        <div className="grid md:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <div
               key={index}
-              className={`p-6 rounded-lg text-center border-2 transition-all ${
+              className={`p-8 rounded-xl text-center border-2 transition-all duration-300 group ${
                 service.featured
-                  ? "bg-white border-primary scale-105 shadow-lg"
-                  : "bg-gray-50 border-transparent"
+                  ? "bg-gradient-to-br from-white to-blue-50 dark:from-gray-800 dark:to-blue-950 border-primary dark:border-blue-400 scale-105 shadow-2xl hover:shadow-3xl"
+                  : "bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 hover:border-primary dark:hover:border-blue-400 hover:shadow-xl"
               }`}
             >
               <div
-                className={`inline-block px-4 py-1 rounded-full text-xs font-semibold uppercase tracking-wide mb-4 ${
+                className={`inline-block px-4 py-1 rounded-full text-xs font-semibold uppercase tracking-wide mb-6 ${
                   service.featured
-                    ? "bg-primary text-white"
-                    : "bg-gray-200 text-gray-600"
+                    ? "bg-primary dark:bg-blue-600 text-white shadow-lg"
+                    : "bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-300"
                 }`}
               >
                 {service.tier}
               </div>
-              <h3 className="text-2xl font-semibold mb-4">{service.title}</h3>
-              <div className="mb-4">
-                <span className="text-3xl font-bold text-gray-900">{service.price}</span>
-                <span className="text-gray-500">{service.unit}</span>
+              <h3 className="text-2xl font-semibold mb-6 group-hover:text-primary dark:group-hover:text-blue-400 transition-colors">{service.title}</h3>
+              <div className="mb-6">
+                <span className="text-4xl font-bold text-gray-900 dark:text-gray-100">{service.price}</span>
+                <span className="text-gray-500 dark:text-gray-400 text-lg">{service.unit}</span>
               </div>
-              <p className="text-gray-600 mb-6">{service.description}</p>
+              <p className="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed min-h-[4rem]">{service.description}</p>
               <Link
                 href={service.href}
-                className={service.featured ? "btn btn-primary w-full" : "btn btn-outline w-full"}
+                className={`w-full transform hover:scale-105 transition-transform ${service.featured ? "btn btn-primary" : "btn btn-outline"}`}
               >
                 {service.featured ? "Get Started" : "Learn More"}
               </Link>

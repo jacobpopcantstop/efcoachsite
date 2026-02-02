@@ -3,6 +3,7 @@ import ProblemSection from "@/components/ProblemSection";
 import MethodologyPreview from "@/components/MethodologyPreview";
 import ServicesPreview from "@/components/ServicesPreview";
 import Testimonials from "@/components/Testimonials";
+import Newsletter from "@/components/Newsletter";
 import CTA from "@/components/CTA";
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
       <MethodologyPreview />
       <ServicesPreview />
       <Testimonials />
+      <Newsletter />
       <CTA />
     </>
   );
