@@ -27,7 +27,7 @@ export default function ProblemSection() {
       <div className="container">
         <h2 className="text-center mb-4">Sound Familiar?</h2>
         <p className="text-center text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-12">
-          These are the challenges families face every day. You're not alone.
+          These are the challenges families face every day. You&apos;re not alone.
         </p>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {problems.map((problem, index) => (
