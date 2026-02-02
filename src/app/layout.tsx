@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import ModeToggle from "@/components/ModeToggle";
+import ThemeToggle from "@/components/ThemeToggle";
 import Footer from "@/components/Footer";
 import "./globals.css";
 
@@ -16,8 +17,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body>
+        <ThemeToggle />
         <ModeToggle />
         <Navbar />
         <main>{children}</main>
