@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-body text-gray-800 bg-white leading-relaxed antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-semibold leading-tight text-gray-900;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h3 {
+    @apply text-xl md:text-2xl;
+  }
+
+  a {
+    @apply text-primary transition-colors duration-150;
+  }
+
+  a:hover {
+    @apply text-primary-dark;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto px-6;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 font-display font-medium text-base rounded-md border-none cursor-pointer transition-all duration-150;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary-dark hover:-translate-y-0.5 hover:shadow-md;
+  }
+
+  .btn-secondary {
+    @apply bg-gray-100 text-gray-700 hover:bg-gray-200 hover:text-gray-800;
+  }
+
+  .btn-outline {
+    @apply bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-white;
+  }
+}
+
+/* Student mode visibility */
+.student-content {
+  display: none;
+}
+
+.parent-content {
+  display: flex;
+}
+
+body.student-mode .student-content {
+  display: flex;
+}
+
+body.student-mode .parent-content {
+  display: none;
+}
